@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    
+</head>
+<body NG-CLOAK >
+  {{test}}
+   
+   
+   <section NG-CONTROLLER="myController">
+      <form name="t">
+       <input type="text" ng-model="mytext" />
+       
+       
+       <div ng-if="mytext.length>5">
+           IF BLOCK
+       </div>
+       <div ng-show="mytext.length>5">
+           SHOW BLOCK
+       </div>
+       <div ng-hide="mytext.length>5">
+           HIDE BLOCK
+       </div>
+       <input name="test" ng-model="test" type="text" ng-required="mytext.length>4" ng-disabled="!mytext || mytext.length<4" ng-maxlength="mytext.length" maxlength="{{mytext.length}}">
+       <span ng-bind="mytext"></span>
+       <span>{{mytext}}</span>
+       
+       <div ng-include="'toInclude.html'">
+          </div>
+       </form>
+   </section>
+   
+    
+    <script src="angular.min.js"></script>
+    <script>
+     var app = angular.module('app', []);
+        app.run(function($rootScope){
+            $rootScope.test=900;
+        })
+        app.controller('myController', function($scope) {
+            
+        });
+    </script>
+</body>
+</html>

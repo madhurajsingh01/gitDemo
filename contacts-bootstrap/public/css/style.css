@@ -1,0 +1,43 @@
+header {
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    height:50px;
+    background-color: darkseagreen;
+}
+
+footer {
+    font-size: 18px;
+    font-weight: 900;
+    font-family: monospace;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+section {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.demo-card-square.mdl-card {
+    width: 100%;
+    height: 220px;
+}
+
+.demo-card-square>.mdl-card__title {
+    color: #fff;
+    background: top right no-repeat #46B6AC;
+}
+
+.mdl-card__title-text1 {}
+
+
+input.ng-valid.ng-dirty{
+    border: 1px solid green;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

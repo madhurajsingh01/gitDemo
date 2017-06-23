@@ -1,0 +1,38 @@
+<script>
+	var car={
+		model:'Suzuki',
+		price:45000,
+		'front drive':false,
+		drive:function(){
+			console.log('Car is in driving mode');
+		},
+		list:['A','B','C',12,function(){ console.log('My car')}],
+		address:{
+			pincode:122001
+		}
+	}
+	
+	console.log(car.model);
+	console.log(car['model']);
+	console.log(car['front drive']);
+	
+	var Car=function(model,price){
+		model=model||'';
+		price=price||0;
+		this.model=model;
+		this.price=price;
+	}
+	var cars=[
+		{model:'Maruti',price:4500000},
+		{model:'Maruti',price:4500000},
+		{model:'Maruti',price:4500000},
+		{model:'Maruti',price:4500000},
+	]
+	
+	var cars2=[
+		new Car('',45000),
+		new Car(),
+		new Car(),
+		new Car()
+	]
+</script>

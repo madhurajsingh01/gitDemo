@@ -1,0 +1,16 @@
+<script>
+/* Solve ax^2+bx+c=0  */
+/*  root1,root2 = (-b+-(sqrt(b^2-4ac)))/2a      */
+var a=prompt("Enter value of a :","2");
+var b=prompt("Enter value of a :","7");
+var c=prompt("Enter value of a :","5");
+
+var numer=Math.sqrt(b*b-4*a*c);
+var denom=2*a;
+
+var root1=(-b+numer)/denom;
+var root2=(-b-numer)/denom;
+
+document.write("First Root is => "+root1+"<br />");
+document.write("Second Root is => "+root2);
+</script>

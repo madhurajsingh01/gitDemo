@@ -1,0 +1,33 @@
+<div class="mdl-grid" style="margin-top:100px;">
+    <div class="mdl-cell mdl-cell--9-col mdl-cell--3-offset-desktop">
+        <h2 class="mdl-card__title-text">Contacts</h2>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <row>
+                            <th class="mdl-data-table__cell--non-numeric">Name</th>
+                            <th class="mdl-data-table__cell--non-numeric">Mobile</th>
+                            <th class="mdl-data-table__cell--non-numeric">Email</th>
+                            <th class="mdl-data-table__cell--non-numeric">Address</th>
+                            <th class="mdl-data-table__cell--non-numeric">Actions</th>
+                        </row>
+                    </thead>
+                    <tr ng-repeat="contact in contacts">
+                        <td class="mdl-cell mdl-cell--2-col">{{contact.name}}</td>
+
+                        <td class="mdl-cell mdl-cell--2-col">{{contact.mobile}}</td>
+
+                        <td class="mdl-cell mdl-cell--2-col">{{contact.email}}</td>
+
+                        <td class="mdl-cell mdl-cell--2-col">{{contact.address}}</td>
+
+                        <td class="mdl-cell mdl-cell--2-col"><button class="btn btn-danger" ng-click="removeRow($index, contact.name)">Delete</button>
+                            <button class="btn btn-primary">Edit</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

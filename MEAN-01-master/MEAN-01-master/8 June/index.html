@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.draw{
+				background:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="myp" >This is a simple para.</p>
+		<input id="myinput">
+		<script>
+			/*
+			setTimeout(function(){
+				var obj=document.querySelector("#myp");
+				//obj.innerHTML="<span>This is created by JS</span>";
+				//obj.outerHTML='<span>hello</span>';
+				//obj.innerHTML='Bye';
+				
+				obj.setAttribute('class','draw')
+				obj.setAttribute('class','draw')
+			},5000);
+			*/
+			function a(){
+				alert('para was clicked');
+			}
+			var obj=document.querySelector("#myp");
+			obj.onclick=function(){	
+				var obj=document.querySelector("#myp");
+				obj.innerHTML='I was clicked';
+			}
+			var myinput=document.querySelector("#myinput");
+			myinput.value=100;
+			myinput.onblur=function(){
+				console.log(myinput.value)
+			}
+			myinput.onfocus=function(){
+				myinput.value=''
+			}
+			myinput.onchange=function(){
+				console.log(myinput.value)
+			}
+			myinput.onkeypress=function(event){
+				//event.preventDefault();
+				//console.log(o)
+			}
+			myinput.onkeydown=function(event){
+			
+				
+				console.log(event.keyCode)
+			}
+			myinput.onkeyup=function(event){
+			if(event.keyCode>=65 && event.keyCode<=(65+26)){
+			event.preventDefault();
+			}
+				console.log(myinput.value)
+			}
+		</script>
+	</body>
+</html>

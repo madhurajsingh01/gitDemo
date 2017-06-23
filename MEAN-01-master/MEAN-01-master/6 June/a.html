@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- AAAPA0000A -->
+		<title>Forms</title>
+	</head>
+	<body >
+		<style>
+			input{
+			 background:yellow
+			}
+			.a{
+				color:red;
+			}
+			#ppp{
+				color:green;
+			}
+		</style>
+		<form >
+			<label for="x">Enter a text</label>
+			<input id="x" class="a" type="text" placeholder="Enter text" minlength="5" maxlength="10" >
+			<label for="y">Enter another text</label>
+			<input id="y" class="a" type="text" placeholder="Enter text"  pattern="^[ABC]\d{3}$">
+			<input  type="number" min="10" max="50" step="0.5">
+			<input ID="ppp" type="email" value="a@a.com"><br />
+			A <input type="checkbox" name="test" value="A"> B <input type="checkbox" name="test" value="B">
+			
+			<input type="date">
+			<input type="tel">
+			<input type="time">
+			<input type="date-time">
+			<input type="search">
+			<input type="password">
+			<input type="file" accept=".pdf">
+			<input type="color">
+			<input type="range">
+			<br />
+			<label for="genderM">Male</label>
+			 <input id="genderM" type="radio" name="gender" required> , <label for="genderF">Female</label>			<input type="radio" id="genderF" name="gender" required><br />
+			Graduate <input type="radio" name="qualification" checked> , Post Graduate		<input type="radio" name="qualification"><br />
+			<textarea rows="5" cols="80"></textarea>
+			<select name="x" required>
+				<option value="">Select any option</option>
+				<option value="1">A</option>
+				<option>B</option>
+				<!-- <option selected>C</option> -->
+				<option>D</option>
+			</select>
+			<select name="y" required multiple>
+				<option value="1">A</option>
+				<option>B</option>
+				<option>C</option>
+				<!-- <option selected>C</option> -->
+				<option>D</option>
+			</select>
+			<input type="button" value="Button">
+			<input type="submit" value="Submit">
+			<input type="reset" value="Reset"><br />
+			<button >Submit</button>
+			<button type="button">Button</button>
+			<button type="reset">Reset</button>
+		</form>
+	</body>
+</html>

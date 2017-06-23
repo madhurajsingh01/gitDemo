@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+	</head>
+	<body>
+	
+		<div ng-controller="Xctrl">
+			<form ng-submit="calc()">
+				<input type="number" ng-model="num" />
+				<button>Submit</button>
+				{{result}}
+			</form>
+			<form ng-submit="convert()">
+				USD <input type="number" ng-model="eur" />
+				<button>Submit</button>
+				<br />
+				INR {{inrvalue}}
+			</form>
+			<br><br><br><br>
+			<form ng-submit="saveData()">
+				Name <input type="text" ng-model="user.name" />
+				Email<input type="email" ng-model="user.email" />
+				<button>Submit</button>
+			</form>
+			
+			
+			<table class="table">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Email</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in registrations">
+						<td>{{user.name}}</td>
+						<td>{{user.email}}</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		
+	
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		
+	</body>
+</html>

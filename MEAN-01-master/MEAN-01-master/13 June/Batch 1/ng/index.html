@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<style>
+			.ng-valid-minlength{
+				background:green;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			{{4+5}}
+		</div>
+		<div>
+			{{4+5}}
+		</div>
+		<div>
+			{{4/5}}
+		</div>
+		<div>
+			{{console.log('hello')}}
+		</div>
+		<button NG-CLICK="x()">Click Me</button>
+		<button ng-init="myinput=0" ng-dblclick="x()">Click Me</button><br />
+		<input ng-model="myinput" type="number"  />
+		
+		{{myinput}}
+		<script src="angular.min.js"></script>
+		<script>
+			var app=angular.module('myapp',[]);
+			app.run(function($rootScope,xyz){
+				console.log('AngularJS App loaded');
+				$rootScope.x=function(){
+					console.log('I was called');
+				}
+			});
+		</script>
+	</body>
+</html>

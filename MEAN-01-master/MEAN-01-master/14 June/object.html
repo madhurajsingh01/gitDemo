@@ -1,0 +1,52 @@
+<script>
+	var obj={
+		name:'Nadeem',
+		'last name':'Sajjad',
+		xyz:function(){
+			console.log('Hello');
+		},
+		arr:[1,2,3,4],
+		test:{
+			a:1,
+			b:1
+		}
+	}
+	obj.xyz();
+	obj['xyz']();
+	
+	var testArray=[
+		{name:'X',value:3},
+		{name:'b',value:2},
+		{name:'P',value:7},
+		{name:'Y',value:1},
+		{name:'m',value:0},
+	];
+	
+	testArray.forEach(function(element){
+		console.log(element.name);
+	});
+	
+	
+	
+	var mappedArray=testArray.map(function(element,index){
+		if(index>3)
+			element.value*=2;
+		return element;
+	});
+	
+	mappedArray.forEach(function(element){
+		console.log(element);
+	});
+	
+	testArray.sort(function(o1,o2){
+		if(o1.name.toLowerCase()>o2.name.toLowerCase())return 1;
+		else if(o1.name.toLowerCase()<o2.name.toLowerCase())return -1;
+		else return 0;
+	});
+	
+	
+	testArray.forEach(function(element){
+		console.log(element);
+	});
+	
+</script>

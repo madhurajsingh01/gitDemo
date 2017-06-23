@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<link rel="stylesheet" href="css/style.css" >
+	</head>
+	<body>
+		
+		<div ng-controller="AController">
+			{{x}}<br />
+			{{y}}
+		</div>
+		
+		
+		<div ng-controller="BController">
+			{{x}}<br />
+			{{y}}
+			
+			<input ng-model="x" type="number">
+			<button ng-click="setVar()">Click Me</button>
+			
+			
+			<div ng-if="x>100">
+				If block
+			</div>
+			
+			<div ng-show="x>100">
+				Show block
+			</div>
+			
+			<div ng-hide="x>100">
+				Hide block
+			</div>
+			
+			<h1 ng-bind="x*5"></h1>
+		
+
+			<div ng-repeat="element in arr">
+				{{element}}
+			</div>
+			
+			
+			<table>
+				<thead>
+					<tr>
+						<td>Sr. No.</td>
+						<td>Values</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="x in arr">
+						<td>
+							{{$index+1}}
+						</td>
+						<td ng-bind="x">
+						
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			
+			
+			
+			<table>
+				<thead>
+					<tr>
+						<td>Sr. No.</td>
+						<td>Name</td>
+						<td>Roll</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="student in students">
+						<td>
+							{{$index+1}}
+						</td>
+						<td ng-bind="student.name">
+						
+						</td>
+						<td>
+							{{student.roll}}
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+			<div ng-repeat="(key,value) in obj">
+				{{key}} - {{value}}
+			</div>
+		</div>
+		
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

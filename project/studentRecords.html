@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body ng-app="app">
+    <form class="form-group">
+        <div class="row" style="margin-top:100px;" ng-controller="saveRecords">
+            <div class="col-md-9 col-md-offset-3">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="col-md-2">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="name" id="name"><br />
+                        </div>
+                        <div class="col-md-2">
+                            <label for="roll">Roll No.</label>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="roll" id="roll">
+                        </div>
+                        <div class="col-md-6">
+                            <br />
+                            <!-- <input type="submit" class="btn btn-primary addnew" value="Add New" ng-click="addNew()">
+                        -->
+                            <button class="btn btn-primary" ng-click="addNew()">Add New</button>
+
+                        </div>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-12 col-md-offset-1">
+                        <table class="tabel table-bordered table-striped ">
+                            <thead>
+                                <row>
+                                    <td class="col-md-4">Name</td>
+                                    <td class="col-md-4">Roll No.</td>
+                                    <td class="col-md-4">Actions</td>
+                                </row>
+                            </thead>
+                            <tr ng-repeat="student in students">
+                                <td><span ng-hide="state==2 && selectedIndex==$index">{{student.name}}</span>
+                                <input ng-model="selected.Name" ng-init="selected.Name=student.name" ng-show="state==2 && selectedIndex==$index"></td>
+
+                                <td><span ng-hide="state==2 && selectedIndex==$index">{{student.roll}}</span>
+                                <input ng-model="selected.Roll" ng-init="selected.Roll=student.roll" ng-show="state==2 && selectedIndex==$index"></td>
+
+                                <td>
+                                    <button class="btn btn-danger" ng-hide="state==2 && selectedIndex==$index" ng-click="removeRow($index, student.name)">Delete</button>
+
+                                    <button class="btn btn-primary" ng-hide="state==2 && selectedIndex==$index" ng-click="editRow(student,$index)">Edit</button>
+
+                                    <button class="btn btn-primary" ng-show="state==2 && selectedIndex==$index" ng-click="updateRow($index,selected)">Update</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.run(function($rootScope) {
+
+        })
+        var elements = {};
+        app.controller('saveRecords', function($scope) {
+            /*Added initial records to Students table*/
+            $scope.state = 1;
+            $scope.students = [{
+                    'name': 'Madhuraj',
+                    'roll': 20003
+                },
+                {
+                    'name': 'Amit',
+                    'roll': 20009
+                },
+                {
+                    'name': 'Anuj',
+                    'roll': 200011
+                },
+                {
+                    'name': 'Rohit',
+                    'roll': 20008
+                },
+            ]
+
+            $scope.addNew = function(students) {
+                if ($scope.state == 1) {
+                    $scope.students.push({
+                        'name': $scope.name,
+                        'roll': $scope.roll
+                    });
+                } else if ($scope.state == 2) {
+                    $scope.students[$scope.selectedIndex] = {
+                        'name': $scope.name,
+                        'roll': $scope.roll
+                    };
+                }
+
+                $scope.name = '';
+                $scope.roll = '';
+                $scope.state = 1;
+            };
+            /*Function to add student record to table */
+            $scope.remove = function() {
+                var newDataList = [];
+                angular.forEach($scope.students, function(stu) {
+                    if (!selected.selected) {
+                        newDataList.push(selected);
+                    }
+                });
+                $scope.personalDetails = newDataList;
+            };
+
+            /*Function to remove student record from table */
+            $scope.removeRow = function($index, name) {
+                /*var index = -1;
+                var studentArray = eval($scope.students);
+                for (var i = 0; i < studentArray.length; i++) {
+                    if (studentArray[i].name === name) {
+                        index = i;
+                        break;
+                    }
+                }
+                if (index === -1) {
+                    alert("Something gone wrong");
+                }*/
+                $scope.students.splice($index, 1);
+            };
+            $scope.updateRow = function(index, selected) {
+                console.log($scope.selectedName)
+                $scope.students[index] = {
+                    'name': selected.Name,
+                    'roll': selected.Roll
+                };
+                $scope.state = 1;
+            }
+            /*Function to edit student record in table */
+            $scope.editRow = function(student, index) {
+                $scope.name = student.name;
+                $scope.roll = student.roll
+                $scope.state = 2;
+                $scope.selectedIndex = index;
+                //alert("Can't edit right now!! develpment in progress!!");
+            };
+        });
+
+    </script>
+</body>
+
+</html>

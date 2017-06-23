@@ -1,0 +1,54 @@
+
+   
+<form class="form-group" name="contactList">
+   <div class="row" style="margin-top:50px;">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-10">
+                <h2>Contacts</h2>
+                <table class="table panel panel-default">
+                    <thead>
+                        <row>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </row>
+                    </thead>
+                    <tr ng-repeat="contact in contacts">
+                        <td>
+                            <a href="contacts/{{contact.name}}"><span ng-hide="state==2 && selectedIndex==$index">{{contact.name}}</span></a>
+                            <input ng-model="selected.Name" ng-init="selected.Name=contact.name" ng-show="state==2 && selectedIndex==$index">
+                        </td>
+                        <td>
+                            <span ng-hide="state==2 && selectedIndex==$index">{{contact.mobile}}</span>
+                            <input ng-model="selected.Mobile" ng-init="selected.Mobile=contact.mobile" ng-show="state==2 && selectedIndex==$index">
+                        </td>
+                        <td>
+                            <span ng-hide="state==2 && selectedIndex==$index">{{contact.email}}</span>
+                            <input ng-model="selected.Email" ng-init="selected.Email=contact.email" ng-show="state==2 && selectedIndex==$index">
+                        </td>
+                        <td>
+                            <span ng-hide="state==2 && selectedIndex==$index">{{contact.address}}</span>
+                            <input ng-model="selected.Address" ng-init="selected.Address=contact.address" ng-show="state==2 && selectedIndex==$index">
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="removeRow($index, contact.name)" ng-hide="state==2 && selectedIndex==$index">Delete</button>
+
+                            <button class="btn btn-primary" ng-hide="state==2 && selectedIndex==$index" ng-click="editRow(contact,$index)">Edit</button>
+
+                            <button class="btn btn-primary" ng-show="state==2 && selectedIndex==$index" ng-click="updateRow($index,selected)">Update</button>
+                        </td>
+                    </tr>
+                </table>
+                <my-directive ng-repeat="contact in contacts" contact="contact"></my-directive>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</form>

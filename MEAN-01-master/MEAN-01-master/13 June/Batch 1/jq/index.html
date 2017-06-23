@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<p>Hello</p>
+		<button id="mbtn" >Click Me</button>
+		<input type="text" onblur="$('#mbtn').click()" />
+	
+		<script src="jquery.js"></script>
+		<script>
+		/*
+		function S(selector){
+			return document.querySelector(selector);
+		}
+		S('p').innerHTML
+		*/
+			function changePara(){
+				//var para=document.querySelector('p');
+				//para.innerHTML='Bye';
+				
+				$('p').html('<strong>Bye</strong>');
+			}
+			var mbtn=document.querySelector('#mbtn');
+			
+			$('#mbtn').click(changePara);
+			//mbtn.onclick=changePara;
+		</script>
+	</body>
+</html>

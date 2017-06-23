@@ -1,0 +1,9 @@
+HTML Assignment
+
+1. Create your resume in HTML. You must try to use all html components you have learnt.
+2. Create a web based form asking for all the contents in Resume as input.
+
+
+CSS
+
+1. Try to include CSS in the Resume and Resume form so as to make them more attractive.

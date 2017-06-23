@@ -1,0 +1,50 @@
+
+			p{
+			 font-family:'Arial', serif;
+			 text-align:justify;
+			 background:yellow;
+			 background-size:100% 100%;
+			}
+			.underlined{
+				text-decoration:line-through;
+				font-size:40px;
+				font-weight:200;
+			}
+			p span {
+				color:blue;
+			}
+			p>span{
+				color:red;
+			}
+			div, p{
+				font-family:monospace;
+			}
+			input[type=number]{
+				color:red;
+			}
+			input[type=text]{
+				color:blue
+			}
+			
+			div+span{
+				color:pink
+			}
+			
+			div>span:nth-child(2){
+				color:yellow;
+			}
+			
+			table.bordered-table, .bordered-table tr, .bordered-table td, .bordered-table th {
+				border: 1px solid;
+				border-collapse: collapse;
+			}
+			
+			
+			.bordered-table tr:nth-child(odd){
+				background:white;
+				color:black;
+			}
+			.bordered-table tr:nth-child(even){
+				background:black;
+				color:white;
+			}

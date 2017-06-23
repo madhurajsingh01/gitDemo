@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="app2">
+
+<head>
+
+</head>
+
+<body>
+    {{x+5}}
+    <section>{{4+4}}</section>
+    <section>{{'hello' + 'bye'}}</section>
+    <section>{{5>4}}</section>
+    <section>{{[1,4,6,4]}}</section>
+    <section>{{ {a:'ddsd',b:'dasdsa',c:5463} }}</section>
+    <button ng-click="myf()">Click Me  {{x+5}}</button>
+    <button ng-click="myf2()">Click Me  {{x+5}}</button>
+<br />
+    A - {{a}} <br />
+    B - {{b}} <br />
+    C - {{c}} <br />
+    <button ng-click="myA()">Click A</button>
+    <button ng-click="myB()">Click B</button>
+    <button ng-click="myC()">Click C</button>
+
+    <script src="angular.min.js"></script>
+    <script>
+        // angular.module('modulename',an array of dependent modules)
+        var app = angular.module('app2', []);
+
+        app.run(function($rootScope) {
+            $rootScope.x = 100;
+            $rootScope.myf = function() {
+                console.log('Bye');
+                $rootScope.x = 500;
+            }
+            $rootScope.myf2 = function() {
+                setTimeout(function() {
+                    console.log('Bye');
+                    $rootScope.x = 1500;
+                    $rootScope.$apply();
+                }, 3000);
+            }
+            $rootScope.a =0;
+            $rootScope.myA = function() {
+                
+                ++$rootScope.a;
+            }
+            $rootScope.b =0;
+            $rootScope.myB = function() {
+                ++$rootScope.b;
+            }
+            $rootScope.c =0;
+            $rootScope.myC = function() {
+                ++$rootScope.c;
+            }
+        });
+
+    </script>
+</body>
+
+</html>

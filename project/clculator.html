@@ -1,0 +1,48 @@
+]<!doctype html>
+<html ng-app="app">
+    <head>
+
+</head>
+
+<body>
+    <div ng-controller="Calculate">
+        <input type="number" ng-model="input1"> <input type="number" ng-model="input2">
+
+        <button ng-click="result=input1+input2; input1=0">+</button>
+        <button ng-click="result=input1-input2">-</button>
+        <button ng-click="result=input1*input2">*</button>
+        <button ng-click="result=input1/input2">/</button>
+
+        <label id="result" >{{result}}</label>
+        <div ng-repeat="t in arr">
+            {{t}} - {{$index}}
+        </div>
+        <table>
+            <tbody>
+                <tr ng-repeat="student in students">
+                    <td>{{student.name}}</td>
+                    <td>{{student.roll}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.run(function($rootScope) {
+
+        })
+        app.controller('Calculate', function($scope) {
+            $scope.arr=[4,6,2,8,1];
+            $scope.students=[
+                {name:'A',roll:1},
+                {name:'B',roll:2},
+                {name:'C',roll:3},
+                {name:'D',roll:4},
+            ]
+        })
+    </script>
+</body>
+    
+    
+</html>

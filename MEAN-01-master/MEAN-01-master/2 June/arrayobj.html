@@ -1,0 +1,38 @@
+<script>
+	var cars=[
+		{model:'Maruti',price:4500000},
+		{model:'Ford',price:6500000},
+		{model:'Audi',price:1500000},
+		{model:'Mahindra',price:9500000},
+	];
+	// cars[0].price+cars[1].price
+	/*
+	cars.forEach(function(car){
+		console.log(car.model + ' - ' +car.price);
+	});
+	
+	*/
+	var filteredCars=cars.filter(function(car){
+		return car.price>1500000;
+	});
+	/*
+	filteredCars.forEach(function(car){
+		console.log(car.model + ' - ' +car.price);
+	});
+	*/
+	var mappedCars=cars.map(function(car){
+		car.balance=0;
+		//delete car.price;
+		return car;
+	});
+	
+	mappedCars.forEach(function(item){
+		console.log(item);
+	});
+	
+	
+	var sum=cars.reduce(function(counter,item){
+		return counter+item.price;
+	},0);
+	console.log(sum);
+</script>

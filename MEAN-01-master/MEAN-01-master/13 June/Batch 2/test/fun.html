@@ -1,0 +1,35 @@
+<script>
+	
+	function sum(a,b){
+		return a+b;
+	}
+	var square=function(a){
+		return a*a;
+	}
+	
+	
+	var test=function(f){
+		return f(1)+f(-1)+f(0);
+	}
+	var sayhello=function(){
+		console.log('Hello');
+	}
+	//test(square)
+	
+	var count=function(){
+		var i=0;
+		return function(){
+			i++;
+			return i;
+		}
+	}
+	
+	//IIFE ->  Immediately Invoked Function Expression
+	//test(function(x){return x+1})  //Anonymous Function
+	//var x=(function(a){return a*a;})(4);
+	var x=(function(){
+		console.log('Hello I am started');
+		
+	})();
+	console.log(x);
+</script>

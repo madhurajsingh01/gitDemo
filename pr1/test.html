@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<button onclick="test()">Test</button>
+		<script>
+			var test=(function(){
+				document.write('App started');
+				i=0;
+				return function(){
+					i++;
+					console.log(i);
+				}
+			})();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="app">
+    <head>
+        
+    </head>
+<body>
+   <div ng-controller="ACtrl">
+       {{x}}<br />{{y}}
+   </div>
+   <div ng-controller="BCtrl">
+       {{x}}<br />{{y}}
+       <button ng-click="myfun()">Click</button>
+   </div>
+   <div ng-controller="CCtrl">
+       {{x}}<br />{{y}}
+       <input ng-model="test" ng-init="test=2" type="number">
+       {{test*1}}
+       {{test*2}}
+       {{test*3}}
+       {{test*4}}
+   </div>
+   <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module('app',[]);
+        app.run(function($rootScope){
+          $rootScope.x=100;
+        })
+        
+        app.controller('ACtrl',function($scope){
+            $scope.y=500;
+            $scope.x=1000;
+        })
+        app.controller('BCtrl',function($scope){
+            $scope.myfun=function(){
+                console.log('Function called')
+            }
+        })
+        app.controller('CCtrl',function($scope){
+            //$scope.test=600;
+        })
+    </script>
+</body>
+</html>

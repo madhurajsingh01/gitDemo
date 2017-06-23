@@ -1,0 +1,23 @@
+<script>
+function a(){
+console.log('A');
+}
+
+function b(){
+console.log('B');
+a();
+}
+
+function c(){
+b();
+console.log('C');
+}
+
+function d(){
+console.log('D');
+}
+
+c();
+d();
+setInterval(d, 1000);
+</script>

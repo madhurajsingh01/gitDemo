@@ -1,0 +1,49 @@
+Javascript Assignment 1
+
+
+
+1. Create Javascript function that reverses a string. E.g. “Hello world” => “dlrow olleH”
+
+2. Use above function to create function that performs word wise reverse function. E.g. “Hello world” => “olleH dlrow”
+
+3. Create a function that capitalises each word of a sentence. E.g “javascRipt is a smart LanguAge. but it Requires too much effort.” => “JavascRipt Is A Smart LanguAge. But It Requires Too Much Effort.”
+
+4. Try to run above function with some more efficiency, such that every word is capitalized and all remaining letters are converted to small case. E.g. “Javascript Is A Smart Language. But It Requires Too Much Effort.”
+
+5. Use below code as template 
+	var capital={
+		'delhi':'Delhi',
+		'uttar pradesh':'Lucknow',
+		'haryana':'Chandigarh',
+		'punjab':'Chandigarh',
+		'uttarakhand':'Dehradoon'
+	}
+
+	var cities=[
+		{city:'Agra',state:'Uttar Pradesh'},
+		{city:'Faridabad',state:'Haryana'},
+		{city:'West delhi',state:'Delhi'},
+		{city:'Amritsar',state:'Punjab'},
+		{city:'Nainital',state:'Uttarakhand'},
+	]
+
+	Now create a new array cityData from cities such that  every element contains object with city state and its capital. E.g {city:’Agra’, state:’Uttar Pradesh’, capital:’Lucknow’}
+	
+5. Create a function to convert a number into array of digits. 1234 => [1,2,3,4]. Make sure elements in array must be of type integer.
+
+6. Create a function that finds sum of all elements of array of digits. [1,2,3,4] => 10.
+
+7. Use above function to recursively add all elements of array until you get a single digit.
+
+8. Check whether a list of digits is palindrome or not . [1,2,3,2,1] => true.
+
+9. Use previous functions to check whether a string is palindrome or not.
+
+10. Create a function that cleans(remove duplicates) an array of digits/strings.
+
+11. Create a function that cleans(remove duplicates) from an array of objects.
+
+12. Create a function (sorter) which takes a string argument. This function can be passed into any sort function of array of objects. The string will decide the key on which the array should be sorted.
+E.g. students.sort(sorter(“name”)) -> Now sorter function must sort students with respect to name. Also make sure if the value in that key is a string array must be sorted without considering case.
+
+13. Work on previous function and make sure if we pass “-” sign before the key the array must get sorted in descending order.

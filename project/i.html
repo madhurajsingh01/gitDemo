@@ -1,0 +1,26 @@
+<!Doctype html>
+<html ng-app="app">
+    <head>
+        
+    </head>
+<body>
+   A -> {{a}}<br />
+   B -> {{b}}<br />
+   C -> {{c}}<br />
+   <button ng-click="addA()">A</button>
+   <button ng-click="b=b+1">B</button>
+   <button ng-click="c=c+1">C</button>
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module('app',[]);
+        app.run(function($rootScope){
+            $rootScope.a=0;
+            $rootScope.b=0;
+            $rootScope.c=0;
+            $rootScope.addA=function(){
+                ++$rootScope.a;
+            }
+        })
+    </script>
+</body>
+</html>

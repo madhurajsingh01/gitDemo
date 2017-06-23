@@ -1,0 +1,42 @@
+<script>
+
+sayhello=function(){
+	console.log('Hello');
+}
+
+setTimeout(sayhello,5000);
+
+// Anonymous Functions
+setTimeout(function(){
+	console.log('Bye');
+},7000);
+
+
+var config=(function(){
+	console.log('Program loaded');	
+	return function(){
+		return navigator;
+	}
+})();
+
+// IIFE (Immediately Invoked Function Expressions)
+
+/*
+sum(100,func)
+sum(100,function(){},function(){})
+
+
+function xyz(a,b,c,d,e,f){
+	
+	if(a==0){
+	d()
+	}else{
+	console.log(a+b);
+	c();
+	}
+	e()
+	f()
+}	
+process(10,20,callback)
+*/
+</script>

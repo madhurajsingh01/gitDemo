@@ -1,0 +1,51 @@
+<!doctype html>
+<html ng-app="app">
+
+<head>
+
+</head>
+
+<body>
+
+    <div ng-controller="displayActors">
+        <div ng-repeat="actor in actors">
+            <img ng-src="{{actor.image}}" style="height:100px;" />
+            <div>{{actor.name}}</div>
+            <div>{{actor.lastMovie}}</div><br />
+        </div>
+
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('displayActors', function($scope, $timeout) {
+            /*Added initial records of Actors*/
+            $scope.actors = [];
+            setTimeout(function() {
+                $scope.actors = [{
+                        'name': 'Amir Khan',
+                        'lastMovie': 'Dhoom4',
+                        'image': 'http://media1.santabanta.com/full1/Indian%20%20Celebrities(M)/Aamir%20Khan/aamir-khan-12a.jpg'
+                    },
+                    {
+                        'name': 'Salman Khan',
+                        'lastMovie': 'Tubelight',
+                        'image': 'http://starsunfolded.1ygkv60km.netdna-cdn.com/wp-content/uploads/2013/08/Salman-Khan.jpg'
+                    },
+                    {
+                        'name': 'Salman Khan',
+                        'lastMovie': 'Sarkar3',
+                        'image': 'http://im.rediff.com/getahead/2013/jun/13amitabh-bachchan1.jpg'
+                    },
+                ];
+                $scope.$apply()
+            }, 4000);
+
+
+        });
+
+    </script>
+</body>
+
+</html>

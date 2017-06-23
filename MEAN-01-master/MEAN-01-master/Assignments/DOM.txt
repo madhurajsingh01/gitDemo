@@ -1,0 +1,10 @@
+DOM Manipulation assignment.
+
+1. Try to create a small calculator, with two input's and 4 buttons('+','-','x','÷') for addition, substraction, multiplication and division respectively. Result should be shown in a different input box. the result box should be non-editable.
+
+2. Create two views 
+	a) Resume input form
+	b) Resume display.
+	When your web application is started user must enter all the details of resume. There should be a submit button. On clicking this submit button it must generate a resume. There must be a print button. on clicking that button user must be able to print his/her Resume.
+	
+3. Create a master form for student data. This master form must contain option to add new student data and to delete a particular student data.

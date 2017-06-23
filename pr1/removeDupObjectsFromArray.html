@@ -1,0 +1,39 @@
+<script>
+var students=[
+		{first: "Madhuraj", lastName: "Singh",roll:2},
+		{first: "Amit", lastName: "Tomar",roll:4},
+		{first: "Anuj", lastName: "David",roll:1},
+		{first: "Amit", lastName: "Tomar",roll:3}];
+		
+		students.sort(function(o1,o2){
+			if(o1.first>o2.first)return 1;
+			else if(o1.first<o2.first) return -1;
+			else return 0;
+		});
+		/**var non_duplidated_data = _.uniq(students, 'first'); 
+		
+		document.write(non_duplidated_data);**/
+		/*
+		 function unique(students){
+        
+        for(var i = 1; i < students.length; ){
+            if(students[i-1] == students[i]){
+                students.splice(i, 1);
+            } else {
+                i++;
+            }
+        }
+        return students;
+    }  */
+	
+	
+	
+	
+	uniqStudents = students.filter( function( item, index, inputArray ) {
+		var i=inputArray.findIndex(function(innerItem){
+			return item.first==innerItem.first;
+		});
+           return i == index;
+    });
+	console.log(uniqStudents);
+</script>

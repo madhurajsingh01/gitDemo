@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.error{
+				color:red;
+			}
+			.success{
+				color:green;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<h1>Hello</h1>
+		<p id="mno">My para</p>
+		
+		<div>
+		<label>Input 1</label><input id="input1"><br /><br />
+		<label>Input 2</label><input id="input2"><br /><br />
+		<label id="result">result here.....</label><br /><br />
+		<input type="button" id="add" value="add" />
+		<input type="button" id="subtract" value="Subtract" />
+		<input type="button" id="multiply" value="Multiply" />
+		<input type="button" id="divide" value="divide" />
+		
+		</div>
+		<script>
+		var addBtn=document.querySelector("#add");
+		addBtn.onclick=function(){
+			var num1=document.querySelector("#input1");
+			var num2=document.querySelector("#input2");
+			var result= parseInt(num1.value)+parseInt(num2.value);
+			
+			var resultValue=document.querySelector("#result");
+			resultValue.setAttribute("style", "background-color: yellow; font-size:50px;");
+			resultValue.innerHTML=(result);
+			
+		}
+		var subBtn=document.querySelector("#subtract");
+		subBtn.onclick=function(){
+			var num1=document.querySelector("#input1");
+			var num2=document.querySelector("#input2");
+			var result= parseInt(num1.value)-parseInt(num2.value);
+			
+			var resultValue=document.querySelector("#result");
+			resultValue.innerHTML=(result);
+			alert(result);
+			if (result >= 0){
+			resultValue.setAttribute("style", "background-color: yellow; font-size:50px;");}
+			else{
+			resultValue.setAttribute("style", "background-color: red; font-size:50px;");}
+			
+			
+		}
+		var multiplyBtn=document.querySelector("#multiply");
+		multiplyBtn.onclick=function(){
+			var num1=document.querySelector("#input1");
+			var num2=document.querySelector("#input2");
+			var result= parseInt(num1.value)*parseInt(num2.value);
+			
+			var resultValue=document.querySelector("#result");
+			resultValue.innerHTML=(result);
+			
+		}
+		var devideBtn=document.querySelector("#divide");
+		devideBtn.onclick=function(){
+			var num1=document.querySelector("#input1");
+			var num2=document.querySelector("#input2");
+			var result= parseInt(num1.value)/parseInt(num2.value);
+			
+			var resultValue=document.querySelector("#result");
+			resultValue.innerHTML=(result);
+			
+		}
+		
+		
+			
+			
+		</script>
+	</body>
+</html>

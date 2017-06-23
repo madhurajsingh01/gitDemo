@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			#xyz, table#xyz td,table#xyz tr{
+				border-collapse:collapse;
+				border: 1px solid black;
+			}
+			
+			#xyz thead{
+				background:black;
+				color:white;
+				cursor:pointer;
+			}
+			
+			#xyz tr:nth-child(even){
+				background:grey;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<p></p>
+		<input id="myinput">
+		<table id="xyz">
+			<thead>
+				<tr>
+					<td onclick="sortBy('name')">
+						Name
+					</td>
+					<td onclick="sortBy('phone')">
+						Phone
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	<div class="progress">
+	  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+		0%
+	  </div>
+	</div>
+	<br />
+	<button id="mybtn">increase</button>
+		<script>
+			var mybtn=document.querySelector("#mybtn");
+			setInterval(function(){
+				var progressBar=document.querySelector(".progress-bar");
+				var valueNow=parseInt(progressBar.getAttribute("aria-valuenow"));
+				if(valueNow<100)
+					valueNow+=10;
+				progressBar.setAttribute("aria-valuenow",valueNow);
+				progressBar.innerHTML=valueNow+"%";
+				progressBar.style.width=valueNow+"%";
+			},5000);
+			setTimeout(function(){
+				document.querySelector('p').innerHTML='bye'
+			},5000);
+			document.querySelector('p').innerHTML='hello';
+			
+			var students=[
+				{name:'Abcd',phone:'1235'},
+				{name:'Pqr',phone:'5556'},
+				{name:'Mno',phone:'7654'},
+				{name:'xyz',phone:'4995'},
+				{name:'ppp',phone:'8889'},
+			]
+			
+			function render(){
+				var table=document.querySelector('#xyz>tbody');
+				table.innerHTML='';
+				students.forEach(function(element){
+					table.innerHTML+="<tr><td>"+element.name+"</td><td>"+element.phone+"</td></tr>";
+				});
+			}
+			render();
+			var sortOrder=1;
+			function sortBy(key){
+				students.sort(function(o1,o2){
+					if(o1[key]>o2[key]) return sortOrder*1;
+					else if(o1[key]<o2[key]) return sortOrder*-1;
+					else return 0;
+				});
+				sortOrder*=-1;
+				render();
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<form class="form-group" name="registrationForm" novalidate ng-submit="registrationForm.$valid && addNew()">
+    <div class="row">
+       <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <h2 class="section">Contacts</h2>
+            <div class="row">
+                <div class="col-md-4">
+                       <label for="nameTxt">Name</label>
+                        <input name="contactName" class="form-control" ng-model="contact.name" type="text" id="nameTxt" required minlength="4">
+                        
+                    <span ng-show="registrationForm.contactName.$touched && registrationForm.contactName.$error.required || registrationForm.$submitted">Contact name is required</span>
+                    <span ng-show="registrationForm.contactName.$touched && registrationForm.contactName.$error.minlength">Contact name should contain atleast 4 characters</span>
+
+                </div>
+                <div class="col-md-4">
+                        <label for="mobileTxt">Mobile Number</label>
+                        <input name="mobile" class="form-control" ng-model="contact.mobile" type="text" id="mobileTxt" pattern="^\d{10}$" required>
+                       
+                        <span ng-show="registrationForm.mobile.$touched || registrationForm.$submitted" ng-messages="registrationForm.mobile.$error">
+                                <span ng-message="pattern">Number invalid</span>
+                        <span ng-message="required">Phone number is required</span>
+                        </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                        <label for="emailTxt">Email</label>
+                        <input name="email" pattern="^[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z0-9]{2,4}$" required class="form-control" ng-model="contact.email" type="email" id="emailTxt">
+                       
+                        <span ng-show="registrationForm.mobile.$touched || registrationForm.$submitted" ng-messages="registrationForm.email.$error">
+                        <span ng-message="pattern">Email invalid</span>
+                        <span ng-message="required">Email is required</span>
+                        </span>
+                </div>
+                <div class="col-md-4">
+                       <label for="addressTxt">Address</label>
+                        <input name="address" required pattern="^[a-zA-Z0-9-/]+$" class="form-control" ng-model="contact.address" type="text" id="addressTxt">
+                        
+                        <span ng-show="registrationForm.mobile.$touched || registrationForm.$submitted" ng-messages="registrationForm.address.$error">
+                                <span ng-message="pattern">Address can not contain special character</span>
+                        <span ng-message="required">Address is required</span>
+                        </span>
+                </div>
+                
+            </div>
+             <div class="row">
+             <div class="col-md-6">
+                        <button class="btn btn-primary">Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<pre>
+      {{registrationForm | json}}
+  </pre>

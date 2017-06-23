@@ -1,0 +1,43 @@
+<script>
+
+/*
+	int sum(int a, int b){
+		return a+b;
+	}
+*/
+/*
+function sum2(a,b){
+	return a+b;
+}
+function sum(a,b){
+	return sum2(a,b);
+}
+*/
+
+sum=function(a,b){
+	a=a||0;
+	b=b||0;
+	return a+b;
+}
+console.log(sum(8,2));
+console.log(sum(8));
+console.log(sum());
+console.log(sum(8,2,7));
+//console.log(sum(8,2));
+//console.log(sum('hello','bye'));
+
+
+
+area=function(l,b,h){
+	if(h!=undefined){
+		return 2*(l*b+b*h+l*h);
+	}else{
+		return l*b;
+	}
+}
+
+
+square=function(a){
+	return a*a;
+}
+</script>

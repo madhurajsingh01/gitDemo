@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	</head>
+	<body>
+		{{a=10}}<br />
+		{{a*10}}<br>
+		
+		
+		<input ng-model="z" type="number">
+		<input ng-model="y" type="number">
+		{{z+y}}<br>
+		{{z}}
+		<br />
+		{{y}}
+		
+		
+		<script src="js/angular.min.js"></script>
+		<script>
+			y=100;
+			function xyz(){
+				y
+			}
+			var app=angular.module('myapp',[]);
+			app.run(function($rootScope){
+				console.log('App loaded');
+				$rootScope.y=9000;
+			});
+		</script>
+	</body>
+</html>

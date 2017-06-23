@@ -1,0 +1,54 @@
+<script>
+age=prompt('Enter your age');
+console.log(age);
+if(age>=18){
+	console.log('Eligible to vote');
+}else{
+	console.log('Not eligible to vote');
+}
+
+
+switch(age){
+	case '10':
+		console.log('Your age is 10');
+		break;
+	case '12':
+		console.log('Your age is 12');
+		break;
+	case '14':
+		console.log('Your age is 14');
+		break;
+	case null:
+		console.log('Undefined value');
+		break;
+	default:
+		console.log('Default case');
+}
+
+i=0;
+while(i<10){
+	console.log(++i);
+}
+
+for(i=1;i<=10;i++){
+	console.log(i*2);
+}
+i=1;
+do{
+	console.log(i++);
+}while(i<10);
+
+
+exit=false;
+do{
+a=prompt('Enter a number');
+b=prompt('Enter another number');
+c=a+b;
+alert('Sum is '+c);
+exit=confirm('You want to continue?');
+}while(exit);
+
+
+
+
+</script>
